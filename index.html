@@ -1,106 +1,56 @@
 <!DOCTYPE html>
-
-    <html>
-
-        <head lang="en">
-            <meta charset="UTF-8">
-            <title>Form for add comments</title>
-            <link rel="stylesheet" href="style/normalize.css">
-            <link rel="stylesheet" href="style/style.css">
-			<script src="scripts/comment.js"></script>
-			<script src="scripts/jquery-1.11.1.js"></script>
-			<script src="scripts/jquery.validate.min.js"></script>
-        </head>
-
-        <body>
-
-            <header>
-                <h1>Form for add comments</h1>
-            </header>
-            <div id="comments-container" class="comments-container">
-
-            </div>
-
-            <form name="comment-form" id="comment-form" class="formControl">
-
-				<label for="comment-form" class="invitation">Please, enter your comment</label>
-				
-                <div>
-					<input 	name="name"
-							type="text"
-							id="user-name" 
-							class="user-name"  
-							placeholder="Enter your name" 
-							class="required"
-							title="Please, enter your name."/>
-					<label for="user-name">Your name</label>
-				</div>
-			
-				<div>
-                    <input 	name="email"
-							type="email"
-							id="user-email" 
-							class="user-email"
-							placeholder="Enter your email"
-							class="required"
-							title="Please, enter your email."/>
-					<label for="user-name">Your email</label>
-                </div>
-
-                <div>
-                    <textarea 	id="comment-text"
-								name="comment"
-								class="user-comment"
-								placeholder="Enter your comment"
-								class="required">
-					</textarea>
-                </div>
-
-                <div>
-                    <input id="add-comment" type="button" value="Add" class="add-comment"/>
-                </div>
-
-            </form>
-			
-			<script>
-				$(document).ready(function(){
-					$('#comment-form').validate({
-						rules:	{
-									name: 	{
-												required: true,
-												rangelength: [5, 10]
-											},
-									email:	{
-												required: true,
-												email: true
-											},
-									comment:{
-												required: true,
-												rangelength:[2, 100]
-											}
-								},//end rules
-								messages:	{
-												name:	{
-															required: "Please, enter your name.",
-															rangelenth: "Your name need to has from 5 to 10 symbols."
-														},
-												email:	{
-															required: "Please, enter your email.",
-															email: "Please, enter your real email."
-														},
-												comment:	{
-															required: "Please, enter your comment.",
-															rangelength: "Your comment need to has 2 or 100 symbols."
-														}
-											}
-					});//end validate()
-			
-				});
-			</script>
-
-            <footer class="footer"><small>@Copyright by</small>
-			<p><a href=http://formvalidator.net/>http://formvalidator.net/</a></p>
-			</footer>
-
-        </body>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Form for add comments</title>
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="scripts/comment.js"></script>
+  <script src="scripts/jquery-1.11.1.js"></script>
+  <script src="scripts/jquery.validate.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Form for add comments</h1>
+</header>
+  <div id="comments-container" class="comments-container">
+  </div>
+  <form name="comment-form" id="comment-form" class="formControl">
+    <label for="comment-form" class="invitation">Please, enter your comment</label>
+    <div>
+      <input 	name="name" type="text" id="user-name" class="user-name" placeholder="Enter your name" class="required" title="Please, enter your name."/>
+      <label for="user-name">Your name</label>
+    </div>
+    <div>
+      <input 	name="email" type="email" id="user-email" class="user-email" placeholder="Enter your email" class="required" title="Please, enter your email."/>
+      <label for="user-name">Your email</label>
+    </div>
+    <div>
+      <textarea 	id="comment-text" name="comment" class="user-comment" placeholder="Enter your comment" class="required">
+      </textarea>
+    </div>
+    <div>
+      <input id="add-comment" type="button" value="Add" class="add-comment"/>
+    </div>
+  </form>
+<script>
+$(document).ready(function(){
+  $('#comment-form').validate({
+    rules:  {
+      name:  {  required: true, rangelength: [5, 10]  },
+      email:  {  required: true, email: true  },
+      comment:  {  required: true, rangelength:[2, 100] }
+},
+      messages:	{
+        name:	{  required: "Please, enter your name.", rangelenth: "Your name need to has from 5 to 10 symbols."  },
+        email:	{  required: "Please, enter your email.",  email: "Please, enter your real email."  },
+        comment:  {  required: "Please, enter your comment.", rangelength: "Your comment need to has 2 or 100 symbols."  }
+}
+});
+});
+</script>
+<footer class="footer"><small>@Copyright by</small>
+  <p><a href=http://formvalidator.net/>http://formvalidator.net/</a></p>
+</footer>
+</body>
 </html>
